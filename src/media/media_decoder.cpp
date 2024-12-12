@@ -582,8 +582,8 @@ MediaDecoder::setupStream()
     startTime_ = av_gettime(); // used to set pts after decoding, and for rate emulation
 
     AVDictionary* options = nullptr;
-    av_dict_set(&options, "analyzeduration", std::to_string(90 * 1000000).c_str(), 0); // wait 30s, instead of default 5
-    av_dict_set(&options, "probesize", std::to_string(5000 * 1000000).c_str(), 0); // instead of default 5
+    av_dict_set(&options, "analyzeduration", std::to_string(180 * 1000000).c_str(), 0); // wait 30s, instead of default 5
+    av_dict_set(&options, "probesize", std::to_string(20000 * 1000000).c_str(), 0); // instead of default 5
 
 #ifdef RING_ACCEL
     if (!accel_) {
