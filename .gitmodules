@@ -1,0 +1,3 @@
+[submodule "contrib/tarballs"]
+	path = contrib/tarballs
+	url = git@github.com:reachOS/jami-contrib-tarballs.git
