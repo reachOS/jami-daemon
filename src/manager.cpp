@@ -203,7 +203,7 @@ static constexpr const char* DHTLOGLEVEL = "DHTLOGLEVEL";
 static void
 setDhtLogLevel()
 {
-    int level = 0;
+    int level = 3;
     if (auto envvar = getenv(DHTLOGLEVEL)) {
         level = to_int<int>(envvar, 0);
         level = std::clamp(level, 0, 3);
