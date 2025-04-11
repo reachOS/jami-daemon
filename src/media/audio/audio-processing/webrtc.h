@@ -37,6 +37,7 @@ public:
     void enableNoiseSuppression(bool enabled) override;
     void enableAutomaticGainControl(bool enabled) override;
     void enableVoiceActivityDetection(bool enabled) override;
+    void setDelayOffsetMs(int delayOffset) override;
 
 private:
     std::unique_ptr<webrtc::AudioProcessing> apm;

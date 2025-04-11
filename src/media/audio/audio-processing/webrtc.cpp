@@ -104,6 +104,11 @@ WebRTCAudioProcessor::enableEchoCancel(bool enabled)
     }
 }
 
+void WebRTCAudioProcessor::setDelayOffsetMs(int delayOffset)
+{
+    apm->set_delay_offset_ms(delayOffset);
+}
+
 void
 WebRTCAudioProcessor::enableVoiceActivityDetection(bool enabled)
 {
@@ -129,6 +134,7 @@ WebRTCAudioProcessor::getProcessed()
     }
 
     int driftSamples = playbackQueue_.samples() - recordQueue_.samples();
+    JAMI_LOG("[webrtc-ap] driftSamples = {:d}", driftSamples);
 
     auto playback = playbackQueue_.dequeue();
     auto record = recordQueue_.dequeue();

@@ -130,6 +130,11 @@ SpeexAudioProcessor::enableEchoCancel(bool enabled)
     }
 }
 
+void SpeexAudioProcessor::setDelayOffsetMs(int delayOffset)
+{
+    // not used
+}
+
 void
 SpeexAudioProcessor::enableNoiseSuppression(bool enabled)
 {

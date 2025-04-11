@@ -2223,6 +2223,12 @@ Manager::setAudioDevice(int index, AudioDeviceType type)
     saveConfig();
 }
 
+void
+Manager::setEchoCancellationDelayOffsetMs(int delayOffsetMs)
+{
+    audioPreference.setDelayOffsetMs(delayOffsetMs);
+}
+
 /**
  * Get list of supported audio output device
  */
@@ -2861,7 +2867,7 @@ Manager::loadAccountMap(const YAML::Node& node)
         pluginPreferences.unserialize(node);
 #endif
     } catch (const YAML::Exception& e) {
-        JAMI_ERR("Preferences node unserialize YAML exception: %s", e.what());
+        JAMI_ERR("Preferences node unserialize YAML exception: %s msg: %s", e.what(), e.msg.c_str());
         ++errorCount;
     } catch (const std::exception& e) {
         JAMI_ERR("Preferences node unserialize standard exception: %s", e.what());

@@ -749,6 +749,12 @@ setNoiseSuppressState(const std::string& state)
     jami::Manager::instance().setNoiseSuppressState(state);
 }
 
+void
+setEchoCancellationDelayOffsetMs(int32_t delayOffsetMs)
+{
+    jami::Manager::instance().setEchoCancellationDelayOffsetMs(delayOffsetMs);
+}
+
 bool
 isAgcEnabled()
 {

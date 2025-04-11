@@ -97,6 +97,7 @@ OpenSLLayer::startStream(AudioDeviceType stream)
                 recorder_->setBufQueues(&freeRecBufQueue_, &recBufQueue_);
                 recorder_->registerCallback(std::bind(&OpenSLLayer::engineServiceRec, this));
                 setHasNativeAEC(recorder_->hasNativeAEC());
+                setDelayOffsetMs();
                 setHasNativeNS(recorder_->hasNativeNS());
             } catch (const std::exception& e) {
                 JAMI_ERR("Error initializing audio capture: %s", e.what());
