@@ -231,6 +231,10 @@ public:
 
     void setEchoCancel(std::string& canceller) { echoCanceller_ = canceller; }
 
+    int getDelayOffsetMs() const { return delayOffsetMs_; }
+
+    void setDelayOffsetMs(int delayOffset) { delayOffsetMs_ = delayOffset; }
+
 private:
     std::string audioApi_;
 
@@ -263,6 +267,7 @@ private:
     bool agcEnabled_;
     bool vadEnabled_;
     std::string echoCanceller_;
+    int delayOffsetMs_;
 
     bool captureMuted_;
     bool playbackMuted_;

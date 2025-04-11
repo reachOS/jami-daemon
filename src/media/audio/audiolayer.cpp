@@ -160,6 +160,17 @@ AudioLayer::setHasNativeAEC(bool hasNativeAEC)
 }
 
 void
+AudioLayer::setDelayOffsetMs()
+{
+    auto delayOffset = pref_.getDelayOffsetMs();
+    JAMI_INFO("[audiolayer] setDelayOffsetMs: %d", delayOffset);
+    std::lock_guard lock(audioProcessorMutex);
+    if (audioProcessor) {
+        audioProcessor->setDelayOffsetMs(delayOffset);
+    }
+}
+
+void
 AudioLayer::setHasNativeNS(bool hasNativeNS)
 {
     JAMI_INFO("[audiolayer] setHasNativeNS: %d", hasNativeNS);

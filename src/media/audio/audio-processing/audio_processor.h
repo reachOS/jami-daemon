@@ -86,6 +86,8 @@ public:
      */
     virtual void enableVoiceActivityDetection(bool enabled) = 0;
 
+    virtual void setDelayOffsetMs(int delayOffset) = 0;
+
 protected:
     AudioFrameResizer playbackQueue_;
     AudioFrameResizer recordQueue_;

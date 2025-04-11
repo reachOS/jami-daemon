@@ -201,6 +201,7 @@ protected:
     void recordChanged(bool started);
     void setHasNativeAEC(bool hasEAC);
     void setHasNativeNS(bool hasNS);
+    void setDelayOffsetMs();
 
     std::shared_ptr<AudioFrame> getToPlay(AudioFormat format, size_t writableSamples);
     std::shared_ptr<AudioFrame> getToRing(AudioFormat format, size_t writableSamples);

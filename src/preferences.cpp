@@ -116,6 +116,7 @@ static constexpr const char* CAPTURE_MUTED_KEY {"captureMuted"};
 static constexpr const char* PLAYBACK_MUTED_KEY {"playbackMuted"};
 static constexpr const char* VAD_KEY {"voiceActivityDetection"};
 static constexpr const char* ECHO_CANCEL_KEY {"echoCancel"};
+static constexpr const char* DELAY_OFFSET_MS_KEY {"delayOffsetMs"};
 
 #ifdef ENABLE_VIDEO
 // video preferences
@@ -277,6 +278,7 @@ AudioPreference::AudioPreference()
     , echoCanceller_("auto")
     , captureMuted_(false)
     , playbackMuted_(false)
+    , delayOffsetMs_(0)
 {}
 
 #if HAVE_ALSA
@@ -440,6 +442,7 @@ AudioPreference::serialize(YAML::Emitter& out) const
     out << YAML::Key << VAD_KEY << YAML::Value << vadEnabled_;
     out << YAML::Key << NOISE_REDUCE_KEY << YAML::Value << denoise_;
     out << YAML::Key << ECHO_CANCEL_KEY << YAML::Value << echoCanceller_;
+    out << YAML::Key << DELAY_OFFSET_MS_KEY << YAML::Value << delayOffsetMs_;
     out << YAML::EndMap;
 }
 
@@ -497,6 +500,7 @@ AudioPreference::unserialize(const YAML::Node& in)
     parseValue(node, AUDIO_PROCESSOR_KEY, audioProcessor_);
     parseValue(node, VAD_KEY, vadEnabled_);
     parseValue(node, ECHO_CANCEL_KEY, echoCanceller_);
+    parseValue(node, DELAY_OFFSET_MS_KEY, delayOffsetMs_);
 }
 
 #ifdef ENABLE_VIDEO

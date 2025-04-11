@@ -142,6 +142,7 @@ int32_t getAudioOutputDeviceIndex(const std::string& name);
 std::string getCurrentAudioOutputPlugin();
 std::string getNoiseSuppressState();
 void setNoiseSuppressState(const std::string& state);
+void setEchoCancellationDelayOffsetMs(int32_t delayOffsetMs);
 
 bool isAgcEnabled();
 void setAgcState(bool enabled);
