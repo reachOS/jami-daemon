@@ -480,6 +480,8 @@ public:
      */
     void setAudioDevice(int index, AudioDeviceType streamType);
 
+    void setEchoCancellationDelayOffsetMs(int delayOffsetMs);
+
     void startAudio();
 
     /**
