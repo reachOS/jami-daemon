@@ -315,10 +315,14 @@ endif
 # Common helpers
 #
 HOSTCONF := --prefix="$(PREFIX)"
+MESONCONF := --prefix="$(PREFIX)"
 HOSTCONF += --datarootdir="$(PREFIX)/share"
 HOSTCONF += --includedir="$(PREFIX)/include"
+MESONCONF += --includedir="$(PREFIX)/include"
 HOSTCONF += --libdir="$(PREFIX)/lib"
+MESONCONF += --libdir="$(PREFIX)/lib"
 HOSTCONF += --build="$(BUILD)" --host="$(HOST)" --target="$(HOST)"
+MESONCONF += --cross-file="$(TOPSRC)/../cross-files/$(HOST).txt"
 HOSTCONF += --program-prefix=""
 # libtool stuff:
 HOSTCONF += --disable-dependency-tracking

@@ -127,10 +127,10 @@ export TOOLCHAIN=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64
 export TARGET=aarch64-linux-android
 export CC=$TOOLCHAIN/bin/$TARGET$ANDROID_API-clang
 export CXX=$TOOLCHAIN/bin/$TARGET$ANDROID_API-clang++
-export AR=$TOOLCHAIN/bin/$TARGET-ar
-export LD=$TOOLCHAIN/bin/$TARGET-ld
-export RANLIB=$TOOLCHAIN/bin/$TARGET-ranlib
-export STRIP=$TOOLCHAIN/bin/$TARGET-strip
+export AR=$TOOLCHAIN/bin/llvm-ar
+export LD=$TOOLCHAIN/bin/ld
+export RANLIB=$TOOLCHAIN/bin/llvm-ranlib
+export STRIP=$TOOLCHAIN/bin/llvm-strip
 export PATH=$PATH:$TOOLCHAIN/bin
 cd contrib
 mkdir native

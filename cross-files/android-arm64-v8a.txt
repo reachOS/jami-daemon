@@ -1,0 +1,9 @@
+[binaries]
+
+[properties]
+
+[host_machine]
+system = 'android'
+cpu_family = 'arm'
+cpu = 'arm64-v8a'
+endian = 'little'
