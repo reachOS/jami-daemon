@@ -17,6 +17,7 @@
 #pragma once
 
 #include "audio_processor.h"
+#include <webrtc-audio-processing-2/modules/audio_processing/include/audio_processing.h>
 
 namespace webrtc {
 class AudioProcessing;
@@ -42,5 +43,7 @@ public:
 private:
     std::unique_ptr<webrtc::AudioProcessing> apm;
     int analogLevel_ {0};
+    std::unique_ptr<webrtc::EchoControlFactory> echoControlFactory;
+    std::unique_ptr<webrtc::AudioProcessing::Config> config;
 };
 } // namespace jami

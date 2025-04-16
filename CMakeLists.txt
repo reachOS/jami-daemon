@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
+include(ExternalProject)
 
 project(jami-core
     VERSION 16.0.0
@@ -539,7 +540,7 @@ else()
     find_package (yaml-cpp CONFIG REQUIRED)
     pkg_search_module (jsoncpp REQUIRED IMPORTED_TARGET jsoncpp)
     pkg_search_module (fmt REQUIRED IMPORTED_TARGET fmt)
-    pkg_search_module (webrtcap IMPORTED_TARGET webrtc-audio-processing)
+    pkg_search_module (webrtcap IMPORTED_TARGET webrtc-audio-processing-2)
     pkg_search_module (gnutls REQUIRED IMPORTED_TARGET gnutls)
     pkg_search_module (opendht REQUIRED IMPORTED_TARGET opendht)
     pkg_search_module (dhtnet REQUIRED IMPORTED_TARGET dhtnet)
@@ -625,7 +626,7 @@ else()
     if (webrtcap_FOUND)
         target_sources(${PROJECT_NAME} PRIVATE ${Source_Files__media__audio__webrtc} )
         target_link_libraries(${PROJECT_NAME} PRIVATE PkgConfig::webrtcap)
-        target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_WEBRTC_AP)
+        # target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_WEBRTC_AP)
     endif()
     if (speexdsp_FOUND)
         target_sources(${PROJECT_NAME} PRIVATE ${Source_Files__media__audio__speexdsp} )

@@ -35,6 +35,8 @@ public:
     void enableAutomaticGainControl(bool) override {};
 
     void enableVoiceActivityDetection(bool) override {};
+
+    void setDelayOffsetMs(int) override {};
 };
 
 } // namespace jami

@@ -277,8 +277,8 @@ AudioPreference::AudioPreference()
     , vadEnabled_(true)
     , echoCanceller_("auto")
     , captureMuted_(false)
-    , playbackMuted_(false)
     , delayOffsetMs_(0)
+    , playbackMuted_(false)
 {}
 
 #if HAVE_ALSA
